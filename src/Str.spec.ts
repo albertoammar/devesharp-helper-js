@@ -10,4 +10,12 @@ describe('Str', () => {
         expect(Str.after('This is my name', 'my name')).toBeFalsy();
     });
 
+    it('before', async () => {
+        expect(Str.before('This is my name', 'e')).toBeTruthy();
+        expect(Str.before('This is my name', 'my name')).toBeTruthy();
+        expect(Str.before('This is my name', 'name')).toBeTruthy();
+        expect(Str.before('This is my name', 'my nam')).toBeFalsy();
+        expect(Str.before('This is my name', 'This')).toBeFalsy();
+    });
+
 });
