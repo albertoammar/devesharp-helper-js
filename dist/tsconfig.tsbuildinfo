@@ -101,9 +101,13 @@
         "version": "b45d3255e803891de2321083a81d0283db6c613b89eba19f3a16e1ba92d13719",
         "signature": "8900b0ff9df1c1679caa7162dec01163945237442e36bf47ee4e913f18ea433c"
       },
+      "../node_modules/case/case.d.ts": {
+        "version": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f",
+        "signature": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f"
+      },
       "../src/str.ts": {
-        "version": "6176101a6a7d5a9cc7fd2bbe2f27532e553a9acd136fe269f51a9a6f7bf8064c",
-        "signature": "9c9d29de82e87fbb86c18f0158b72d742fa3e292d189c69efa85062b7145cbc4"
+        "version": "b6971d31cfa9864d602fe2c8becbede454de13aa028bb464985fe90308e9ebe8",
+        "signature": "9457ddd5e3cdda61d1609c6ea6e5ba57422ad26c26f8f48da30ef03451749470"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
@@ -197,6 +201,9 @@
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
+      "../src/str.ts": [
+        "../node_modules/case/case.d.ts"
+      ],
       "../src/index.ts": [
         "../src/obj.ts",
         "../src/str.ts"
@@ -282,6 +289,7 @@
     },
     "semanticDiagnosticsPerFile": [
       "../src/obj.ts",
+      "../node_modules/case/case.d.ts",
       "../src/str.ts",
       "../src/index.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
