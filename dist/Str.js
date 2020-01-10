@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Case = require("case");
-function after(string, beginWith) {
+function startsWith(string, beginWith) {
     let reg = new RegExp('^' + beginWith + '.*');
     return reg.test(string);
 }
-exports.after = after;
-function before(string, endWith) {
+exports.startsWith = startsWith;
+function endsWith(string, endWith) {
     let reg = new RegExp('.*' + endWith + '$');
     return reg.test(string);
 }
-exports.before = before;
+exports.endsWith = endsWith;
 function camel(string) {
     return Case.camel(string);
 }
