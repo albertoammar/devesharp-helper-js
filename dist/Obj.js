@@ -1,6 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Str = require("./Str");
+function add(obj, key, value) {
+    let objDot = dot(obj);
+    if (!objDot[key]) {
+        return set(obj, key, value);
+    }
+    return obj;
+}
+exports.add = add;
 function get(obj, key) {
     let objDot = dot(obj);
     return objDot[key] ? objDot[key] : null;

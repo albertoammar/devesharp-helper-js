@@ -1,5 +1,13 @@
 import * as Str from "./Str";
 
+export function add(obj: Object, key: string, value: any) {
+    let objDot = dot(obj);
+    if(!objDot[key]) {
+        return set(obj, key, value);
+    }
+    return obj;
+}
+
 export function get(obj: Object, key: string) {
     let objDot = dot(obj);
     return objDot[key] ? objDot[key] : null;
