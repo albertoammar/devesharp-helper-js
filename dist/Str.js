@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Case = require("case");
-console.log(Case.camel('sdsd'));
 function after(string, beginWith) {
     let reg = new RegExp('^' + beginWith + '.*');
     return reg.test(string);
@@ -20,4 +19,9 @@ function kebab(string) {
     return Case.kebab(string);
 }
 exports.kebab = kebab;
+function contains(string, needles) {
+    let reg = new RegExp('.*' + needles + '.*');
+    return reg.test(string);
+}
+exports.contains = contains;
 //# sourceMappingURL=Str.js.map

@@ -1,7 +1,5 @@
 import * as Case from 'case';
 
-console.log(Case.camel('sdsd'));
-
 export function after(string: string, beginWith: string) {
     let reg = new RegExp('^'+beginWith+'.*');
     return reg.test(string);
@@ -18,4 +16,9 @@ export function camel(string: string) {
 
 export function kebab(string: string) {
     return Case.kebab(string);
+}
+
+export function contains(string: string, needles: string) {
+    let reg = new RegExp('.*'+needles+'.*');
+    return reg.test(string);
 }

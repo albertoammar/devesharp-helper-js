@@ -29,5 +29,14 @@ describe('Str', () => {
         expect(Str.kebab('foo--Bar')).toEqual('foo-bar');
         expect(Str.kebab('fooBarFoo')).toEqual('foo-bar-foo');
     });
+    
+    it('contains', async () => {
+        expect(Str.contains('This is my name', 'e')).toBeTruthy();
+        expect(Str.contains('This is my name', 'my name')).toBeTruthy();
+        expect(Str.contains('This is my name', 'T')).toBeTruthy();
+        expect(Str.contains('This is my name', 'nami')).toBeFalsy();
+        expect(Str.contains('This is my name', 'b')).toBeFalsy();
+        expect(Str.contains('This is my name', 't')).toBeFalsy();
+    });
 
 });
