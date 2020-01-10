@@ -66,6 +66,16 @@ describe('Str', () => {
         expect(Str.finish('this/string/', '/')).toEqual('this/string/');
         expect(Str.finish('this/string', '/')).toEqual('this/string/');
     });
+
+    it('start', async () => {
+        expect(Str.start('/this/string', '/')).toEqual('/this/string');
+        expect(Str.start('this/string', '/')).toEqual('/this/string');
+    });
+    
+    it('start', async () => {
+        expect(Str.start('this/string/', '/')).toEqual('this/string/');
+        expect(Str.start('this/string', '/')).toEqual('this/string/');
+    });
     
     it('limit', async () => {
         expect(Str.limit('The quick brown fox jumps over the lazy dog', 19)).toEqual('The quick brown fox...');

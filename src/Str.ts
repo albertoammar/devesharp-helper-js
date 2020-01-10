@@ -43,6 +43,10 @@ export function finish(string: string, char: string) {
     return string[string.length - 1] !== char ? string + char : string;
 }
 
+export function start(string: string, char: string) {
+    return string[0] !== char ? char + string : string;
+}
+
 export function limit(string: string, limit: number, end: string = '...') {
     return string.substr(0, limit) + end;
 }

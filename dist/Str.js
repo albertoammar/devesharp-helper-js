@@ -44,6 +44,10 @@ function finish(string, char) {
     return string[string.length - 1] !== char ? string + char : string;
 }
 exports.finish = finish;
+function start(string, char) {
+    return string[0] !== char ? char + string : string;
+}
+exports.start = start;
 function limit(string, limit, end = '...') {
     return string.substr(0, limit) + end;
 }

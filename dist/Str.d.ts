@@ -7,6 +7,7 @@ export declare function kebab(string: string): string;
 export declare function contains(string: string, needles: string): boolean;
 export declare function containsAll(string: string, needles: string[]): boolean;
 export declare function finish(string: string, char: string): string;
+export declare function start(string: string, char: string): string;
 export declare function limit(string: string, limit: number, end?: string): string;
 export declare function replaceArray(search: string, replace: any[], subject: string): string;
 export declare function replaceFirst(search: string, replace: string, subject: string): string;
