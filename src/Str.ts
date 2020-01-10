@@ -46,3 +46,11 @@ export function finish(string: string, char: string) {
 export function limit(string: string, limit: number, end: string = '...') {
     return string.substr(0, limit) + end;
 }
+
+export function replaceArray(search: string, replace: any[], subject: string) {
+    replace.forEach(i => {
+        subject = subject.replace(search, i);
+    });
+    
+    return subject;
+}

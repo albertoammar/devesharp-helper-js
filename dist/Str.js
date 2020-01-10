@@ -48,4 +48,11 @@ function limit(string, limit, end = '...') {
     return string.substr(0, limit) + end;
 }
 exports.limit = limit;
+function replaceArray(search, replace, subject) {
+    replace.forEach(i => {
+        subject = subject.replace(search, i);
+    });
+    return subject;
+}
+exports.replaceArray = replaceArray;
 //# sourceMappingURL=Str.js.map
