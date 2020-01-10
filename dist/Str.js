@@ -44,4 +44,8 @@ function finish(string, char) {
     return string[string.length - 1] !== char ? string + char : string;
 }
 exports.finish = finish;
+function limit(string, limit, end = '...') {
+    return string.substr(0, limit) + end;
+}
+exports.limit = limit;
 //# sourceMappingURL=Str.js.map

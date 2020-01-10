@@ -7,3 +7,4 @@ export declare function kebab(string: string): string;
 export declare function contains(string: string, needles: string): boolean;
 export declare function containsAll(string: string, needles: string[]): boolean;
 export declare function finish(string: string, char: string): string;
+export declare function limit(string: string, limit: number, end?: string): string;

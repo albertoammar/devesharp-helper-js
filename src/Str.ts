@@ -42,3 +42,7 @@ export function containsAll(string: string, needles: string[]) {
 export function finish(string: string, char: string) {
     return string[string.length - 1] !== char ? string + char : string;
 }
+
+export function limit(string: string, limit: number, end: string = '...') {
+    return string.substr(0, limit) + end;
+}

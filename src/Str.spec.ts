@@ -63,7 +63,7 @@ describe('Str', () => {
     });
     
     it('finish', async () => {
-        expect(Str.finish('this/string/', '/')).toEqual('this/string/');
-        expect(Str.finish('this/string', '/')).toEqual('this/string/');
+        expect(Str.limit('The quick brown fox jumps over the lazy dog', 19)).toEqual('The quick brown fox...');
+        expect(Str.limit('The quick brown fox jumps over the lazy dog', 19, '(...)')).toEqual('The quick brown fox(...)');
     });
 });
