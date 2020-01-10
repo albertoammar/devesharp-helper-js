@@ -59,4 +59,10 @@ function replaceFirst(search, replace, subject) {
     return subject.replace(search, replace);
 }
 exports.replaceFirst = replaceFirst;
+function replaceLast(search, replace, subject) {
+    return subject.substring(0, subject.lastIndexOf(search)) +
+        replace +
+        subject.substring(subject.lastIndexOf(search) + search.length);
+}
+exports.replaceLast = replaceLast;
 //# sourceMappingURL=Str.js.map

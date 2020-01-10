@@ -58,3 +58,9 @@ export function replaceArray(search: string, replace: any[], subject: string) {
 export function replaceFirst(search: string, replace: string, subject: string) {
     return subject.replace(search, replace);
 }
+
+export function replaceLast(search: string, replace: string, subject: string) {
+    return subject.substring(0, subject.lastIndexOf(search)) +
+        replace +
+        subject.substring(subject.lastIndexOf(search) + search.length);
+}

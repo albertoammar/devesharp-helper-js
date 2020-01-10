@@ -10,3 +10,4 @@ export declare function finish(string: string, char: string): string;
 export declare function limit(string: string, limit: number, end?: string): string;
 export declare function replaceArray(search: string, replace: any[], subject: string): string;
 export declare function replaceFirst(search: string, replace: string, subject: string): string;
+export declare function replaceLast(search: string, replace: string, subject: string): string;

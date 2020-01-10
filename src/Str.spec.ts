@@ -82,4 +82,11 @@ describe('Str', () => {
         expect(Str.replaceFirst('?', '8:30', 'The event will take place between ? and ?'))
             .toEqual('The event will take place between 8:30 and ?');
     });
+
+    it.only('replaceLast', async () => {
+        expect(Str.replaceLast('?', '8:30', 'The event will take place between ? and ? and 9:00'))
+            .toEqual('The event will take place between ? and 8:30 and 9:00');
+        expect(Str.replaceLast('?', '8:30', 'The event will take place between ? and ?'))
+            .toEqual('The event will take place between ? and 8:30');
+    });
 });
