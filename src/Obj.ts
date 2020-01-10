@@ -1,5 +1,6 @@
 import * as Str from "./Str";
 import {numberLiteralTypeAnnotation} from "@babel/types";
+import {compareArray, range} from "./Arr";
 
 export function add(obj: Object, key: string, value: any) {
     let objDot = dot(obj);
@@ -20,6 +21,30 @@ export function get(obj: Object, key: string, defaultValue = null) {
 
 export function has(obj: Object, key: string) {
     return !!dot(obj)[key];
+}
+
+export function only(obj: Object, onlyKey: string) {
+    let objDot = dot(obj);
+    let newObjDot = {}; 
+    Object.entries(objDot).forEach(i => {
+        let [key, value] = i;
+        let keyD = key.toString()
+            .replace(/\.[0-9]+\./, '.')
+            .replace(/\.[0-9]+$/, '')
+            .replace(/^[0-9]+\./, '');
+        
+        if (keyD === onlyKey) {
+            newObjDot[key] = value;    
+        }
+    });
+
+    let newObj = {};
+    Object.entries(newObjDot).forEach(i => {
+        let [key, value] = i;
+        newObj = set(newObj, key, value);
+    });
+    
+    return convertArrayAssocToArraySeqRecursive(newObj);
 }
 
 export function set(obj: Object, key: string, value: any) {
@@ -59,6 +84,7 @@ function setObj(obj: Object, key: string, value: any) {
         let newObj = obj[keyFirst] ? obj[keyFirst] : {};
         
         obj[keyFirst] = setObj(newObj, newKey, value);
+        
     } else {
         obj[key] = value;
     }
@@ -90,4 +116,22 @@ function passingLastKey(obj, originalKey) {
     });
     
     return newObject;
+}
+
+function convertArrayAssocToArraySeqRecursive(obj) {
+    if(obj instanceof Object) {
+        let keys = Object.keys(obj).map((i) => parseInt(i));
+        if(compareArray(keys, range(0, keys.length))) {
+            
+            return Object.values(obj)
+                .map(i => convertArrayAssocToArraySeqRecursive(i));
+        } else {
+            Object.entries(obj).forEach(entry => {
+                let [key, value] = entry;
+                obj[key] = convertArrayAssocToArraySeqRecursive(value);
+            });
+        }
+    }
+    
+    return obj;
 }

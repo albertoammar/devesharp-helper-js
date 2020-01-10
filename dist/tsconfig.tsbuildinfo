@@ -97,6 +97,10 @@
         "version": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594",
         "signature": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594"
       },
+      "../src/arr.ts": {
+        "version": "a6eb264dd03de43f85559f1d0f02a61565f4a6238b520b9488b5863aec4f233c",
+        "signature": "74784533e466561b9d118dc44d4318aa5bc4c82907953ff458bceceb7cd053de"
+      },
       "../node_modules/case/case.d.ts": {
         "version": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f",
         "signature": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f"
@@ -110,8 +114,8 @@
         "signature": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e"
       },
       "../src/obj.ts": {
-        "version": "524fd313dbbc8cc3c07adb1ae71003ff9a639fa48e169561692fc0640f6cb9e3",
-        "signature": "2fe6f0b6ef93379c8d3cb35908fa52b1d9f9545ee4990d5d2525a342d853844d"
+        "version": "45a621853dc4e97f23c1e0215bb4187e8994b00155996c3f99333a1b792c33a4",
+        "signature": "1bfbe6b4f68f29aa5c5bf6556433ff2a9f4ec0791cf56f0b02c2c5f5c61618d2"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
@@ -206,7 +210,8 @@
       ],
       "../src/obj.ts": [
         "../src/str.ts",
-        "../node_modules/@babel/types/lib/index.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts",
+        "../src/arr.ts"
       ],
       "../src/index.ts": [
         "../src/obj.ts",
@@ -292,6 +297,7 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "../src/arr.ts",
       "../node_modules/case/case.d.ts",
       "../src/str.ts",
       "../node_modules/@babel/types/lib/index.d.ts",

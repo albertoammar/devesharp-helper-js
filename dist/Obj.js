@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Str = require("./Str");
+const Arr_1 = require("./Arr");
 function add(obj, key, value) {
     let objDot = dot(obj);
     if (!objDot[key]) {
@@ -22,6 +23,27 @@ function has(obj, key) {
     return !!dot(obj)[key];
 }
 exports.has = has;
+function only(obj, onlyKey) {
+    let objDot = dot(obj);
+    let newObjDot = {};
+    Object.entries(objDot).forEach(i => {
+        let [key, value] = i;
+        let keyD = key.toString()
+            .replace(/\.[0-9]+\./, '.')
+            .replace(/\.[0-9]+$/, '')
+            .replace(/^[0-9]+\./, '');
+        if (keyD === onlyKey) {
+            newObjDot[key] = value;
+        }
+    });
+    let newObj = {};
+    Object.entries(newObjDot).forEach(i => {
+        let [key, value] = i;
+        newObj = set(newObj, key, value);
+    });
+    return convertArrayAssocToArraySeqRecursive(newObj);
+}
+exports.only = only;
 function set(obj, key, value) {
     return setObj(obj, key, value);
 }
@@ -83,5 +105,21 @@ function passingLastKey(obj, originalKey) {
         }
     });
     return newObject;
+}
+function convertArrayAssocToArraySeqRecursive(obj) {
+    if (obj instanceof Object) {
+        let keys = Object.keys(obj).map((i) => parseInt(i));
+        if (Arr_1.compareArray(keys, Arr_1.range(0, keys.length))) {
+            return Object.values(obj)
+                .map(i => convertArrayAssocToArraySeqRecursive(i));
+        }
+        else {
+            Object.entries(obj).forEach(entry => {
+                let [key, value] = entry;
+                obj[key] = convertArrayAssocToArraySeqRecursive(value);
+            });
+        }
+    }
+    return obj;
 }
 //# sourceMappingURL=Obj.js.map

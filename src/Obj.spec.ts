@@ -236,4 +236,52 @@ describe('Obj', () => {
         expect(false).toEqual(Obj.has(obj, 'value2'));
         expect(false).toEqual(Obj.has(obj, 'simple_object.desk.price2'));
     });
+    
+    it.only('only', async () => {
+        let obj = {
+            'value': 2,
+            'simple_object':
+                {
+                    'desk': {
+                        'price': 100
+                    }
+                },
+            'object_with_array':
+                {
+                    'desk': {
+                        'price': [
+                            'A',
+                            'B',
+                        ]
+                    }
+                },
+            'array_object':
+                [
+                    {
+                        'desk': {
+                            'price': [
+                                'A',
+                            ],
+                            'price2': [
+                                'A',
+                            ]
+                        }
+                    },
+                    {
+                        'desk': {
+                            'price': [
+                                'A',
+                            ],
+                            'price2': [
+                                'A',
+                            ]
+                        }
+                    },
+                ]
+        };
+        
+        expect({ simple_object: { desk: { price: 100 } } }).toEqual(Obj.only(obj, 'simple_object.desk.price'));
+        expect({ value: 2 }).toEqual(Obj.only(obj, 'value'));
+        expect({"array_object":[{"desk":{"price":["A"]}},{"desk":{"price":["A"]}}]}).toEqual(Obj.only(obj, 'array_object.desk.price'));
+    });
 });
