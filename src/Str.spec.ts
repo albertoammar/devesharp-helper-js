@@ -39,4 +39,13 @@ describe('Str', () => {
         expect(Str.contains('This is my name', 't')).toBeFalsy();
     });
 
+    it('contains', async () => {
+        expect(Str.containsAll('This is my name', ['e', 'name'])).toBeTruthy();
+        expect(Str.containsAll('This is my name', ['my name', 'This'])).toBeTruthy();
+        expect(Str.containsAll('This is my name', ['T'])).toBeTruthy();
+        expect(Str.containsAll('This is my name', ['nami', 'me'])).toBeFalsy();
+        expect(Str.containsAll('This is my name', ['b', 'name'])).toBeFalsy();
+        expect(Str.containsAll('This is my name', ['name','t','name'])).toBeFalsy();
+    });
+
 });

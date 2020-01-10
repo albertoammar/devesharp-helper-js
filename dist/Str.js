@@ -24,4 +24,9 @@ function contains(string, needles) {
     return reg.test(string);
 }
 exports.contains = contains;
+function containsAll(string, needles) {
+    let truthy = needles.map(value => contains(string, value));
+    return truthy.reduce((previous, current) => previous && current);
+}
+exports.containsAll = containsAll;
 //# sourceMappingURL=Str.js.map

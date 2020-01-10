@@ -18,7 +18,12 @@ export function kebab(string: string) {
     return Case.kebab(string);
 }
 
-export function contains(string: string, needles: string) {
+export function contains(string: string, needles: string): boolean {
     let reg = new RegExp('.*'+needles+'.*');
     return reg.test(string);
+}
+
+export function containsAll(string: string, needles: string[]) {
+    let truthy = needles.map(value => contains(string, value));
+    return truthy.reduce((previous, current): boolean => previous && current);
 }
