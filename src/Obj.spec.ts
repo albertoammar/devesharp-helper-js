@@ -122,6 +122,9 @@ describe('Obj', () => {
         expect(null).toEqual(Obj.get(obj, 'object_with_array.desk.price.2'));
         expect(null).toEqual(Obj.get(obj, 'value2'));
         expect(null).toEqual(Obj.get(obj, 'simple_object.desk.price2'));
+        expect(0).toEqual(Obj.get(obj, 'object_with_array.desk.price.2', 0));
+        expect(0).toEqual(Obj.get(obj, 'value2', 0));
+        expect(0).toEqual(Obj.get(obj, 'simple_object.desk.price2', 0));
     });
     
     it('add', async () => {

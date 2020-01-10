@@ -13,9 +13,9 @@ export function except(obj: Object, key: string) {
     return removeValue(obj, key);
 }
 
-export function get(obj: Object, key: string) {
+export function get(obj: Object, key: string, defaultValue = null) {
     let objDot = dot(obj);
-    return objDot[key] ? objDot[key] : null;
+    return objDot[key] ? objDot[key] : defaultValue;
 }
 
 export function set(obj: Object, key: string, value: any) {

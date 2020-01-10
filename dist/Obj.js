@@ -13,9 +13,9 @@ function except(obj, key) {
     return removeValue(obj, key);
 }
 exports.except = except;
-function get(obj, key) {
+function get(obj, key, defaultValue = null) {
     let objDot = dot(obj);
-    return objDot[key] ? objDot[key] : null;
+    return objDot[key] ? objDot[key] : defaultValue;
 }
 exports.get = get;
 function set(obj, key, value) {
