@@ -7,6 +7,11 @@ function after(string, value) {
     return split.join(value);
 }
 exports.after = after;
+function before(string, value) {
+    let split = string.split(value);
+    return split[0];
+}
+exports.before = before;
 function startsWith(string, beginWith) {
     let reg = new RegExp('^' + beginWith + '.*');
     return reg.test(string);

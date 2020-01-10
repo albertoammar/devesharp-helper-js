@@ -6,6 +6,11 @@ export function after(string: string, value: string) {
     return split.join(value);
 }
 
+export function before(string: string, value: string) {
+    let split = string.split(value);
+    return split[0];
+}
+
 export function startsWith(string: string, beginWith: string) {
     let reg = new RegExp('^'+beginWith+'.*');
     return reg.test(string);
