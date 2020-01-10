@@ -18,6 +18,10 @@ function get(obj, key, defaultValue = null) {
     return objDot[key] ? objDot[key] : defaultValue;
 }
 exports.get = get;
+function has(obj, key) {
+    return !!dot(obj)[key];
+}
+exports.has = has;
 function set(obj, key, value) {
     return setObj(obj, key, value);
 }

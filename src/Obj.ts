@@ -18,6 +18,10 @@ export function get(obj: Object, key: string, defaultValue = null) {
     return objDot[key] ? objDot[key] : defaultValue;
 }
 
+export function has(obj: Object, key: string) {
+    return !!dot(obj)[key];
+}
+
 export function set(obj: Object, key: string, value: any) {
     return setObj(obj, key, value);
 }
