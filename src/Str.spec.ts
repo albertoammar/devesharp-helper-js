@@ -61,8 +61,13 @@ describe('Str', () => {
         expect(Str.endsWith('This is my name', 'my nam')).toBeFalsy();
         expect(Str.endsWith('This is my name', 'This')).toBeFalsy();
     });
-    
+
     it('finish', async () => {
+        expect(Str.finish('this/string/', '/')).toEqual('this/string/');
+        expect(Str.finish('this/string', '/')).toEqual('this/string/');
+    });
+    
+    it('limit', async () => {
         expect(Str.limit('The quick brown fox jumps over the lazy dog', 19)).toEqual('The quick brown fox...');
         expect(Str.limit('The quick brown fox jumps over the lazy dog', 19, '(...)')).toEqual('The quick brown fox(...)');
     });
@@ -71,5 +76,10 @@ describe('Str', () => {
         expect(Str.replaceArray('?', ['8:30', '9:00'], 'The event will take place between ? and ?'))
             .toEqual('The event will take place between 8:30 and 9:00');
         expect(Str.replaceArray('?', [1,2,3], '???')).toEqual('123');
+    });
+    
+    it('replaceFirst', async () => {
+        expect(Str.replaceFirst('?', '8:30', 'The event will take place between ? and ?'))
+            .toEqual('The event will take place between 8:30 and ?');
     });
 });

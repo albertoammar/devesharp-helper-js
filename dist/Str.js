@@ -55,4 +55,8 @@ function replaceArray(search, replace, subject) {
     return subject;
 }
 exports.replaceArray = replaceArray;
+function replaceFirst(search, replace, subject) {
+    return subject.replace(search, replace);
+}
+exports.replaceFirst = replaceFirst;
 //# sourceMappingURL=Str.js.map
