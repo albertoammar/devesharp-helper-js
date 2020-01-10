@@ -28,6 +28,9 @@ export function camel(string: string) {
 export function kebab(string: string) {
     return Case.kebab(string);
 }
+export function studly(string: string) {
+    return Case.pascal(string);
+}
 
 export function contains(string: string, needles: string): boolean {
     let reg = new RegExp('.*'+needles+'.*');

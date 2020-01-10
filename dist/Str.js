@@ -30,6 +30,10 @@ function kebab(string) {
     return Case.kebab(string);
 }
 exports.kebab = kebab;
+function studly(string) {
+    return Case.pascal(string);
+}
+exports.studly = studly;
 function contains(string, needles) {
     let reg = new RegExp('.*' + needles + '.*');
     return reg.test(string);

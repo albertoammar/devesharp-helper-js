@@ -22,6 +22,12 @@ describe('Str', () => {
         expect(Str.camel('foo_Bar_Foo')).toEqual('fooBarFoo');
     });
     
+    it('studly', async () => {
+        expect(Str.studly('foo_bar')).toEqual('FooBar');
+        expect(Str.studly('_foo_bar')).toEqual('FooBar');
+        expect(Str.studly('foo_Bar_Foo')).toEqual('FooBarFoo');
+    });
+    
     it('kebab', async () => {
         expect(Str.kebab('fooBar')).toEqual('foo-bar');
         expect(Str.kebab('foo--Bar')).toEqual('foo-bar');
@@ -70,11 +76,6 @@ describe('Str', () => {
     it('start', async () => {
         expect(Str.start('/this/string', '/')).toEqual('/this/string');
         expect(Str.start('this/string', '/')).toEqual('/this/string');
-    });
-    
-    it('start', async () => {
-        expect(Str.start('this/string/', '/')).toEqual('this/string/');
-        expect(Str.start('this/string', '/')).toEqual('this/string/');
     });
     
     it('limit', async () => {
