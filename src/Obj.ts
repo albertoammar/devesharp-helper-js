@@ -1,19 +1,15 @@
 import * as Str from "./Str";
 
+export function get(obj: Object, key: string) {
+    let objDot = dot(obj);
+    return objDot[key] ? objDot[key] : null;
+}
+
 export function set(obj: Object, key: string, value: any) {
-    if(obj !instanceof Object) {
-        new Error('Parameter must be object');
-    }
     return setObj(obj, key, value);
 }
 
 export function dot(obj) {
-    let newObject = {};
-
-    if(obj !instanceof Object) {
-        new Error('Parameter must be object');
-    }
-
     return passingLastKey(obj, null);
 }
 

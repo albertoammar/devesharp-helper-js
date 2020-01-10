@@ -55,7 +55,7 @@ describe('Obj', () => {
                 });
     });
     
-    it.only('set', async () => {
+    it('set', async () => {
         let obj = {
             'value': 2,
         };
@@ -94,6 +94,34 @@ describe('Obj', () => {
                             }
                         },
                 });
+    });
+    
+    it('get', async () => {
+        let obj = {
+            'value': 2,
+            'simple_object':
+                {
+                    'desk': {
+                        'price': 100
+                    }
+                },
+            'object_with_array':
+                {
+                    'desk': {
+                        'price': [
+                            'A',
+                            'B',
+                        ]
+                    }
+                },
+        };
+        
+        expect(100).toEqual(Obj.get(obj, 'simple_object.desk.price'));
+        expect(2).toEqual(Obj.get(obj, 'value'));
+        expect('A').toEqual(Obj.get(obj, 'object_with_array.desk.price.0'));
+        expect(null).toEqual(Obj.get(obj, 'object_with_array.desk.price.2'));
+        expect(null).toEqual(Obj.get(obj, 'value2'));
+        expect(null).toEqual(Obj.get(obj, 'simple_object.desk.price2'));
     });
     
 });

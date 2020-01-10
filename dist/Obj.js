@@ -1,18 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Str = require("./Str");
+function get(obj, key) {
+    let objDot = dot(obj);
+    return objDot[key] ? objDot[key] : null;
+}
+exports.get = get;
 function set(obj, key, value) {
-    if (obj instanceof Object) {
-        new Error('Parameter must be object');
-    }
     return setObj(obj, key, value);
 }
 exports.set = set;
 function dot(obj) {
-    let newObject = {};
-    if (obj instanceof Object) {
-        new Error('Parameter must be object');
-    }
     return passingLastKey(obj, null);
 }
 exports.dot = dot;
