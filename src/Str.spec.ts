@@ -28,6 +28,10 @@ describe('Str', () => {
         expect(Str.studly('foo_Bar_Foo')).toEqual('FooBarFoo');
     });
     
+    it('snake', async () => {
+        expect(Str.snake('MyName is John')).toEqual('my-name-is-john');
+    });
+    
     it('kebab', async () => {
         expect(Str.kebab('fooBar')).toEqual('foo-bar');
         expect(Str.kebab('foo--Bar')).toEqual('foo-bar');

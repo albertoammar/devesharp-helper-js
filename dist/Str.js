@@ -34,6 +34,10 @@ function studly(string) {
     return Case.pascal(string);
 }
 exports.studly = studly;
+function snake(string) {
+    return Case.snake(string);
+}
+exports.snake = snake;
 function contains(string, needles) {
     let reg = new RegExp('.*' + needles + '.*');
     return reg.test(string);
