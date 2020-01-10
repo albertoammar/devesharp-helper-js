@@ -40,4 +40,8 @@ function containsAll(string, needles) {
     return truthy.reduce((previous, current) => previous && current);
 }
 exports.containsAll = containsAll;
+function finish(string, char) {
+    return string[string.length - 1] !== char ? string + char : string;
+}
+exports.finish = finish;
 //# sourceMappingURL=Str.js.map

@@ -61,4 +61,9 @@ describe('Str', () => {
         expect(Str.endsWith('This is my name', 'my nam')).toBeFalsy();
         expect(Str.endsWith('This is my name', 'This')).toBeFalsy();
     });
+    
+    it('finish', async () => {
+        expect(Str.finish('this/string/', '/')).toEqual('this/string/');
+        expect(Str.finish('this/string', '/')).toEqual('this/string/');
+    });
 });
