@@ -26,7 +26,7 @@ describe('Str', () => {
     
     it('kebab', async () => {
         expect(Str.kebab('fooBar')).toEqual('foo-bar');
-        expect(Str.kebab('fooBar')).toEqual('foo-bar');
+        expect(Str.kebab('foo--Bar')).toEqual('foo-bar');
         expect(Str.kebab('fooBarFoo')).toEqual('foo-bar-foo');
     });
 
