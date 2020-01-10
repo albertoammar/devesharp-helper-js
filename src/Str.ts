@@ -38,7 +38,7 @@ export function snake(string: string) {
 }
 
 export function contains(string: string, needles: string): boolean {
-    let reg = new RegExp('.*'+needles+'.*');
+    let reg = new RegExp('.*\\'+needles+'.*');
     return reg.test(string);
 }
 

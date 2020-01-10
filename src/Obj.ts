@@ -1,3 +1,12 @@
+import * as Str from "./Str";
+
+export function set(obj: Object, key: string, value: any) {
+    if(obj !instanceof Object) {
+        new Error('Parameter must be object');
+    }
+    return setObj(obj, key, value);
+}
+
 export function dot(obj) {
     let newObject = {};
 
@@ -6,6 +15,22 @@ export function dot(obj) {
     }
 
     return passingLastKey(obj, null);
+}
+
+function setObj(obj: Object, key: string, value: any) {
+    
+    if(Str.contains(key, '.')) {
+        let split = key.split('.');
+        let keyFirst = split[0];
+        let newKey = split.splice(1, split.length).join('.');
+        let newObj = obj[keyFirst] ? obj[keyFirst] : {};
+        
+        obj[keyFirst] = setObj(newObj, newKey, value);
+    } else {
+        obj[key] = value;
+    }
+    
+    return obj;
 }
 
 function passingLastKey(obj, originalKey) {
