@@ -101,9 +101,13 @@
         "version": "b45d3255e803891de2321083a81d0283db6c613b89eba19f3a16e1ba92d13719",
         "signature": "8900b0ff9df1c1679caa7162dec01163945237442e36bf47ee4e913f18ea433c"
       },
+      "../src/str.ts": {
+        "version": "fb2e22490220d64408e50c22e072acd9e580955b50c0de72232ac4430fcf92dc",
+        "signature": "31bf52a87f1f3aee0060dcef80928ab363547f55d6651c07da9237ebd8cbb1ee"
+      },
       "../src/index.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
+        "signature": "6f55276c451e5e7c2feb2b8b339c428d44c7c3eb43caa6ebeb766243ba674e6a"
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
         "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
@@ -193,6 +197,10 @@
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
+      "../src/index.ts": [
+        "../src/obj.ts",
+        "../src/str.ts"
+      ],
       "../node_modules/@types/babel__generator/index.d.ts": [
         "../node_modules/@babel/types/lib/index.d.ts"
       ],
@@ -231,6 +239,10 @@
       ]
     },
     "exportedModulesMap": {
+      "../src/index.ts": [
+        "../src/obj.ts",
+        "../src/str.ts"
+      ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@types/babel__generator/index.d.ts",
         "../node_modules/@types/babel__traverse/index.d.ts",
@@ -270,6 +282,7 @@
     },
     "semanticDiagnosticsPerFile": [
       "../src/obj.ts",
+      "../src/str.ts",
       "../src/index.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
