@@ -98,8 +98,8 @@
         "signature": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594"
       },
       "../src/arr.ts": {
-        "version": "a6eb264dd03de43f85559f1d0f02a61565f4a6238b520b9488b5863aec4f233c",
-        "signature": "74784533e466561b9d118dc44d4318aa5bc4c82907953ff458bceceb7cd053de"
+        "version": "7943960cc7b115017a42903a68f28bcd5608bb3ee5961e9a3af0e8dab022622e",
+        "signature": "32469d246be0c0bc0da73ea0af08e8e1530d78cd1d19e925e3abbd31df980104"
       },
       "../node_modules/case/case.d.ts": {
         "version": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f",
@@ -109,17 +109,17 @@
         "version": "1222edfd356742171076282476f8faeb65c63facd942a0808b539634b494fbb0",
         "signature": "e609509f17aab8dab519ba67d6d3b7908cb01a02da5e4a238a05fe656c8a13da"
       },
-      "../node_modules/@babel/types/lib/index.d.ts": {
-        "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
-        "signature": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e"
-      },
       "../src/obj.ts": {
-        "version": "45a621853dc4e97f23c1e0215bb4187e8994b00155996c3f99333a1b792c33a4",
-        "signature": "1bfbe6b4f68f29aa5c5bf6556433ff2a9f4ec0791cf56f0b02c2c5f5c61618d2"
+        "version": "c91eab82c2e952c3c82d13d79045bc5de920dcf868a5281064f849a86a009f1d",
+        "signature": "354922f68bbd931c21443c73287837433789a466c85026d3a7f392685118c2c0"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
         "signature": "6f55276c451e5e7c2feb2b8b339c428d44c7c3eb43caa6ebeb766243ba674e6a"
+      },
+      "../node_modules/@babel/types/lib/index.d.ts": {
+        "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
+        "signature": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e"
       },
       "../node_modules/@types/babel__generator/index.d.ts": {
         "version": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
@@ -210,7 +210,6 @@
       ],
       "../src/obj.ts": [
         "../src/str.ts",
-        "../node_modules/@babel/types/lib/index.d.ts",
         "../src/arr.ts"
       ],
       "../src/index.ts": [
@@ -300,9 +299,9 @@
       "../src/arr.ts",
       "../node_modules/case/case.d.ts",
       "../src/str.ts",
-      "../node_modules/@babel/types/lib/index.d.ts",
       "../src/obj.ts",
       "../src/index.ts",
+      "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",

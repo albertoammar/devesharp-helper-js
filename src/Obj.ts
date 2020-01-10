@@ -1,6 +1,5 @@
 import * as Str from "./Str";
-import {numberLiteralTypeAnnotation} from "@babel/types";
-import {compareArray, range} from "./Arr";
+import {compareArray, range, warp} from "./Arr";
 
 export function add(obj: Object, key: string, value: any) {
     let objDot = dot(obj);
@@ -23,19 +22,24 @@ export function has(obj: Object, key: string) {
     return !!dot(obj)[key];
 }
 
-export function only(obj: Object, onlyKey: string) {
+export function only(obj: Object, keys: string | string[]) {
+    let onlyKeys = warp(keys).sort();
     let objDot = dot(obj);
-    let newObjDot = {}; 
+    let newObjDot = {};
+    
     Object.entries(objDot).forEach(i => {
         let [key, value] = i;
-        let keyD = key.toString()
-            .replace(/\.[0-9]+\./, '.')
-            .replace(/\.[0-9]+$/, '')
-            .replace(/^[0-9]+\./, '');
         
-        if (keyD === onlyKey) {
-            newObjDot[key] = value;    
-        }
+        onlyKeys.forEach(onlyKey => {
+            let keyD = key.toString()
+                .replace(/\.[0-9]+\./, '.')
+                .replace(/\.[0-9]+$/, '')
+                .replace(/^[0-9]+\./, '');
+
+            if (keyD === onlyKey) {
+                newObjDot[key] = value;
+            }
+        });
     });
 
     let newObj = {};
@@ -121,7 +125,7 @@ function passingLastKey(obj, originalKey) {
 function convertArrayAssocToArraySeqRecursive(obj) {
     if(obj instanceof Object) {
         let keys = Object.keys(obj).map((i) => parseInt(i));
-        if(compareArray(keys, range(0, keys.length))) {
+        if(compareArray(keys, range(0, keys.length)) && keys.length !== 0) {
             
             return Object.values(obj)
                 .map(i => convertArrayAssocToArraySeqRecursive(i));

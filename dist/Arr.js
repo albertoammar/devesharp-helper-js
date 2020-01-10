@@ -12,4 +12,14 @@ function compareArray(array1, array2) {
     return JSON.stringify(array1) == JSON.stringify(array2);
 }
 exports.compareArray = compareArray;
+function warp(value) {
+    if (!(value instanceof Array)) {
+        if (value === null || value === undefined) {
+            return (value === null || value === undefined) ? [] : [value];
+        }
+        return [value];
+    }
+    return value;
+}
+exports.warp = warp;
 //# sourceMappingURL=Arr.js.map

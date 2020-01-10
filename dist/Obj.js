@@ -23,18 +23,21 @@ function has(obj, key) {
     return !!dot(obj)[key];
 }
 exports.has = has;
-function only(obj, onlyKey) {
+function only(obj, keys) {
+    let onlyKeys = Arr_1.warp(keys).sort();
     let objDot = dot(obj);
     let newObjDot = {};
     Object.entries(objDot).forEach(i => {
         let [key, value] = i;
-        let keyD = key.toString()
-            .replace(/\.[0-9]+\./, '.')
-            .replace(/\.[0-9]+$/, '')
-            .replace(/^[0-9]+\./, '');
-        if (keyD === onlyKey) {
-            newObjDot[key] = value;
-        }
+        onlyKeys.forEach(onlyKey => {
+            let keyD = key.toString()
+                .replace(/\.[0-9]+\./, '.')
+                .replace(/\.[0-9]+$/, '')
+                .replace(/^[0-9]+\./, '');
+            if (keyD === onlyKey) {
+                newObjDot[key] = value;
+            }
+        });
     });
     let newObj = {};
     Object.entries(newObjDot).forEach(i => {
@@ -109,7 +112,7 @@ function passingLastKey(obj, originalKey) {
 function convertArrayAssocToArraySeqRecursive(obj) {
     if (obj instanceof Object) {
         let keys = Object.keys(obj).map((i) => parseInt(i));
-        if (Arr_1.compareArray(keys, Arr_1.range(0, keys.length))) {
+        if (Arr_1.compareArray(keys, Arr_1.range(0, keys.length)) && keys.length !== 0) {
             return Object.values(obj)
                 .map(i => convertArrayAssocToArraySeqRecursive(i));
         }

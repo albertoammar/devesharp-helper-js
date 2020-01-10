@@ -201,11 +201,38 @@ describe('Obj', () => {
             },
         }, 'value'));
 
-        expect({
-            'value': [1,2,4],
-        }).toEqual(Obj.except({
-            'value': [1,2,3,4],
-        }, 'value.2'));
+        expect({'value': [1,2,4]})
+            .toEqual(Obj.except({'value': [1,2,3,4]}, 'value.2'));
+        
+        expect({'simple_object': [
+                {
+                    'desk': {
+                        'price': 100
+                    }
+                },
+                {
+                    'desk': {
+                    },
+                    'desk2': {
+                        'price': 100
+                    },
+                },
+            ]})
+        .toEqual(Obj.except({'simple_object': [
+                {
+                    'desk': {
+                        'price': 100
+                    }
+                },
+                {
+                    'desk': {
+                        'price': 100
+                    },
+                    'desk2': {
+                        'price': 100
+                    }
+                },
+            ]}, 'simple_object.1.desk.price'));
         
     });
 
@@ -237,7 +264,7 @@ describe('Obj', () => {
         expect(false).toEqual(Obj.has(obj, 'simple_object.desk.price2'));
     });
     
-    it.only('only', async () => {
+    it('only', async () => {
         let obj = {
             'value': 2,
             'simple_object':
