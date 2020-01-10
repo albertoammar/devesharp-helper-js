@@ -106,8 +106,8 @@
         "signature": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f"
       },
       "../src/str.ts": {
-        "version": "0a8465bdd6149e7a426f2b622f67c20b656982b67ccfa35633af53a622063bf6",
-        "signature": "b3453002fd8c01f61fc86a8bb9350c042fdc06e2a45511abfcd136cb02647e36"
+        "version": "4d859b521a5c5c1f4a02b624d5f1bc91a0a37de11ce44da2378873658b915648",
+        "signature": "0b40befbd302298482e51dc29b0a3b00a06a7e8f61a1ad4a67f55224e5f72dd1"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",

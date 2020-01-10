@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Case = require("case");
+function after(string, value) {
+    let split = string.split(value);
+    split.splice(0, 1);
+    return split.join(value);
+}
+exports.after = after;
 function startsWith(string, beginWith) {
     let reg = new RegExp('^' + beginWith + '.*');
     return reg.test(string);

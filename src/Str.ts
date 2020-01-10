@@ -1,5 +1,11 @@
 import * as Case from 'case';
 
+export function after(string: string, value: string) {
+    let split = string.split(value);
+    split.splice(0, 1);
+    return split.join(value);
+}
+
 export function startsWith(string: string, beginWith: string) {
     let reg = new RegExp('^'+beginWith+'.*');
     return reg.test(string);
