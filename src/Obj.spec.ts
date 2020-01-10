@@ -168,4 +168,42 @@ describe('Obj', () => {
         }).toEqual(Obj.add(obj, 'simple_object.desk.price2', 200));
     });
     
+    it('except', async () => {
+        expect({
+            'value': 2,
+            'simple_object': {}
+        }).toEqual(Obj.except({
+            'value': 2,
+            'simple_object':
+            {
+                'desk': {
+                    'price': 100
+                }
+            },
+        }, 'simple_object.desk'));
+        
+        expect({
+            'simple_object': {
+                'desk': {
+                    'price': 100
+                }
+            }
+        }).toEqual(Obj.except({
+            'value': 2,
+            'simple_object':
+            {
+                'desk': {
+                    'price': 100
+                }
+            },
+        }, 'value'));
+
+        expect({
+            'value': [1,2,4],
+        }).toEqual(Obj.except({
+            'value': [1,2,3,4],
+        }, 'value.2'));
+        
+    });
+    
 });

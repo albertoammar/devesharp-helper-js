@@ -105,17 +105,17 @@
         "version": "1222edfd356742171076282476f8faeb65c63facd942a0808b539634b494fbb0",
         "signature": "e609509f17aab8dab519ba67d6d3b7908cb01a02da5e4a238a05fe656c8a13da"
       },
+      "../node_modules/@babel/types/lib/index.d.ts": {
+        "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
+        "signature": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e"
+      },
       "../src/obj.ts": {
-        "version": "a871a1ebff0f9b89e8a2cba2d9521b76b7931d6ab55f5571f32663747f9a8c61",
-        "signature": "d66ea1a9bb6c5740e6897b05b24cd7265b0b95cab7bb880cb75d3c14942ac24b"
+        "version": "d70f9f10d2e3fa6b2fa4b29e2056742736b6e4e02b0318094f8f2981f8cd64e3",
+        "signature": "12d626cb353cfb55e839e602ceb081372dda23f0f5e6ca4e6d61441b35bb84fb"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
         "signature": "6f55276c451e5e7c2feb2b8b339c428d44c7c3eb43caa6ebeb766243ba674e6a"
-      },
-      "../node_modules/@babel/types/lib/index.d.ts": {
-        "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
-        "signature": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e"
       },
       "../node_modules/@types/babel__generator/index.d.ts": {
         "version": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
@@ -205,7 +205,8 @@
         "../node_modules/case/case.d.ts"
       ],
       "../src/obj.ts": [
-        "../src/str.ts"
+        "../src/str.ts",
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../src/index.ts": [
         "../src/obj.ts",
@@ -293,9 +294,9 @@
     "semanticDiagnosticsPerFile": [
       "../node_modules/case/case.d.ts",
       "../src/str.ts",
+      "../node_modules/@babel/types/lib/index.d.ts",
       "../src/obj.ts",
       "../src/index.ts",
-      "../node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",

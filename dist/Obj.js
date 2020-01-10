@@ -9,6 +9,10 @@ function add(obj, key, value) {
     return obj;
 }
 exports.add = add;
+function except(obj, key) {
+    return removeValue(obj, key);
+}
+exports.except = except;
 function get(obj, key) {
     let objDot = dot(obj);
     return objDot[key] ? objDot[key] : null;
@@ -22,6 +26,24 @@ function dot(obj) {
     return passingLastKey(obj, null);
 }
 exports.dot = dot;
+function removeValue(obj, key) {
+    if (Str.contains(key, '.')) {
+        let split = key.split('.');
+        let keyFirst = split[0];
+        let newKey = split.splice(1, split.length).join('.');
+        let newObj = obj[keyFirst] ? obj[keyFirst] : {};
+        obj[keyFirst] = removeValue(newObj, newKey);
+    }
+    else {
+        if (obj instanceof Array) {
+            obj.splice(key, 1);
+        }
+        else {
+            delete obj[key];
+        }
+    }
+    return obj;
+}
 function setObj(obj, key, value) {
     if (Str.contains(key, '.')) {
         let split = key.split('.');
