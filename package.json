@@ -1,6 +1,6 @@
 {
-    "name": "@devesharp/nestjs",
-    "version": "0.0.4",
+    "name": "@devesharp/helpers-js",
+    "version": "0.1.0",
     "scripts": {
         "build": "rimraf ./dist && tsc -p tsconfig.json",
         "dev": "tsc -w -p tsconfig.json"
@@ -23,9 +23,9 @@
             "^.+\\.(t|j)s$": "ts-jest"
         }
     },
-    "peerDependencies": {
-    },
+    "peerDependencies": {},
     "devDependencies": {
+        "@types/jest": "^24.0.25",
         "base64url": "^3.0.1",
         "bcrypt": "^3.0.6",
         "common": "^0.2.5",
