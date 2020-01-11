@@ -12,7 +12,7 @@ function add(obj, key, value) {
 }
 exports.add = add;
 function except(obj, keys) {
-    keys = Arr_1.warp(keys);
+    keys = Arr_1.wrap(keys);
     return removeValue(obj, '', keys);
 }
 exports.except = except;
@@ -36,7 +36,7 @@ function has(obj, key) {
 }
 exports.has = has;
 function only(obj, keys) {
-    let onlyKeys = Arr_1.warp(keys).sort();
+    let onlyKeys = Arr_1.wrap(keys).sort();
     let objDot = dot(obj);
     let newObjDot = {};
     Object.entries(objDot).forEach(i => {

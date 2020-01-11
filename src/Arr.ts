@@ -22,7 +22,7 @@ export function collapse(array: any[]) {
     return newArray;
 }
 
-export function warp(value: any[] | any) {
+export function wrap(value: any[] | any) {
     if(!(value instanceof Array)) {
         if(value === null || value === undefined) {
             return (value === null || value === undefined) ? [] : [value];    

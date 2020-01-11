@@ -1,5 +1,5 @@
 import * as Str from "./Str";
-import {compareArray, range, warp} from "./Arr";
+import { compareArray, range, wrap } from "./Arr";
 import { equalsAny} from "./Str";
 
 export function add(obj: Object, key: string, value: any) {
@@ -11,7 +11,7 @@ export function add(obj: Object, key: string, value: any) {
 }
 
 export function except(obj: Object, keys: string| string[]) {
-    keys = warp(keys);
+    keys = wrap(keys);
     return removeValue(obj, '', keys);
 }
 
@@ -35,7 +35,7 @@ export function has(obj: Object, key: string) {
 }
 
 export function only(obj: Object, keys: string | string[]) {
-    let onlyKeys = warp(keys).sort();
+    let onlyKeys = wrap(keys).sort();
     let objDot = dot(obj);
     let newObjDot = {};
     

@@ -20,7 +20,7 @@ function collapse(array) {
     return newArray;
 }
 exports.collapse = collapse;
-function warp(value) {
+function wrap(value) {
     if (!(value instanceof Array)) {
         if (value === null || value === undefined) {
             return (value === null || value === undefined) ? [] : [value];
@@ -29,5 +29,5 @@ function warp(value) {
     }
     return value;
 }
-exports.warp = warp;
+exports.wrap = wrap;
 //# sourceMappingURL=Arr.js.map
