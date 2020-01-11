@@ -1,9 +1,11 @@
- # HelpersJS
- 
-![][logo]
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/14295479/72207172-1a94d180-3475-11ea-9c18-f73307aa360a.png"/>
+</p>
+<p align="center">
+<a href="https://www.npmjs.com/package/@devesharp/helpers-js" target="_blank"><img src="https://img.shields.io/npm/v/@devesharp/helpers-js.svg" alt="NPM Version" /></a>
+</p>
 
-[logo]: https://user-images.githubusercontent.com/14295479/72197665-9efa3c80-3402-11ea-98f6-ace2e3080f43.jpg
-
+## Description
 HelpersJS is a javascript library based on Laravel helpers. It is just based, contains too many functions and also the lack of some.
 
 ## Installation
