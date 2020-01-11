@@ -16,4 +16,13 @@ describe('Arr', () => {
         expect(Arr.compareArray(['b'],['b','b'])).toBeFalsy();
         expect(Arr.compareArray(['b'],['ba'])).toBeFalsy();
     });
+    
+    it('warp', async () => {
+        expect(Arr.warp(0)).toEqual([0]);
+        expect(Arr.warp('b')).toEqual(['b']);
+        expect(Arr.warp([0])).toEqual([0]);
+        expect(Arr.warp(['b'])).toEqual(['b']);
+        expect(Arr.warp(undefined)).toEqual([]);
+        expect(Arr.warp(null)).toEqual([]);
+    });
 });
