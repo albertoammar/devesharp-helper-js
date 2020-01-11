@@ -197,7 +197,7 @@ function passingLastKey(obj, originalKey) {
 function convertArrayAssocToArraySeqRecursive(obj) {
     if(obj instanceof Object) {
         let keys = Object.keys(obj).map((i) => parseInt(i));
-        if(compareArray(keys, range(0, keys.length)) && keys.length !== 0) {
+        if(compareArray(keys, range(0, keys.length-1)) && keys.length !== 0) {
             
             return Object.values(obj)
                 .map(i => convertArrayAssocToArraySeqRecursive(i));

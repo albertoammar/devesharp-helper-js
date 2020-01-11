@@ -98,7 +98,7 @@
         "signature": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594"
       },
       "../src/arr.ts": {
-        "version": "aabe7dc0867ea8cbc9dbed0196b524a49591d0532bc39f831daa95f1b6dc42a4",
+        "version": "dcd3b958ecb8bfd37db831b53db3633a857e5690d4fef5732cca0e879f6a1a95",
         "signature": "32469d246be0c0bc0da73ea0af08e8e1530d78cd1d19e925e3abbd31df980104"
       },
       "../node_modules/case/case.d.ts": {
@@ -110,7 +110,7 @@
         "signature": "bdacec36879f15198e4da22331d6c90c0e7904b24ccbdd952e78455547cceeb7"
       },
       "../src/obj.ts": {
-        "version": "5ce0ad4bce64e9d6671655964327713a3ae781f91b0e68ca2f188a157e924f5b",
+        "version": "f3c071fc71da21c9df158b4e711ca9d0fdbf943813c681b52dd5aa01cbb815f8",
         "signature": "7a6f4fc4e062378f9e6d8d6306adf40aa6685b83e96c9a501bc2f9f838ac35ce"
       },
       "../src/index.ts": {

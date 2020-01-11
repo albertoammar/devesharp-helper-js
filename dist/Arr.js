@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 function range(start, end) {
     let range = [];
-    for (let i = start; end > i; i++) {
+    for (let i = start; end + 1 > i; i++) {
         range.push(i);
     }
     return range;
