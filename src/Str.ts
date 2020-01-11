@@ -47,6 +47,11 @@ export function containsAll(string: string, needles: string[]) {
     return truthy.reduce((previous, current): boolean => previous && current);
 }
 
+export function equalsAny(string: string, needles: string[]) {
+    let truthy = needles.map(value => string === value);
+    return truthy.reduce((previous, current): boolean => previous || current);
+}
+
 export function finish(string: string, char: string) {
     return string[string.length - 1] !== char ? string + char : string;
 }

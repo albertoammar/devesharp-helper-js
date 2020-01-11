@@ -23,3 +23,16 @@ export function warp(value: any[] | any) {
     
     return value;
 }
+
+// export function containsAll(array: any[], needles: any[] | any) {
+//     array.forEach((i) => {
+//         Object.entries(needles).forEach(entry => {
+//             let [key, value] = entry;
+//             if (i == value) {
+//                 console.log(value);
+//             }
+//         })
+//     });
+//    
+//     return true;
+// }

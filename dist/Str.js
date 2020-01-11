@@ -48,6 +48,11 @@ function containsAll(string, needles) {
     return truthy.reduce((previous, current) => previous && current);
 }
 exports.containsAll = containsAll;
+function equalsAny(string, needles) {
+    let truthy = needles.map(value => string === value);
+    return truthy.reduce((previous, current) => previous || current);
+}
+exports.equalsAny = equalsAny;
 function finish(string, char) {
     return string[string.length - 1] !== char ? string + char : string;
 }

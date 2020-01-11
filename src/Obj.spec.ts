@@ -172,67 +172,102 @@ describe('Obj', () => {
     });
     
     it('except', async () => {
-        expect({
-            'value': 2,
-            'simple_object': {}
-        }).toEqual(Obj.except({
-            'value': 2,
-            'simple_object':
-            {
-                'desk': {
-                    'price': 100
-                }
-            },
-        }, 'simple_object.desk'));
         
         expect({
-            'simple_object': {
-                'desk': {
-                    'price': 100
+                "products": {
+                    "desk2": {
+                        "price": 100
+                    }
                 }
-            }
-        }).toEqual(Obj.except({
-            'value': 2,
-            'simple_object':
-            {
-                'desk': {
-                    'price': 100
-                }
-            },
-        }, 'value'));
+            })
+            .toEqual(Obj.except({'products':
+                {
+                    'desk': {
+                        'price': 100
+                    },
+                    'desk2': {
+                        'price': 100
+                    }
+                },
+        }, 'products.desk'));
+
+        expect({
+            "products": {}
+        })
+            .toEqual(Obj.except({'products':
+                    {
+                        'desk': {
+                            'price': 100
+                        },
+                    },
+            }, 'products.desk'));
+
+        expect({'products':
+                [
+                    {
+                    },
+                    {
+                        'desk2': {
+                            'price': 200
+                        }
+                    }
+                ],
+            })
+            .toEqual(Obj.except({'products':
+                    [
+                        {
+                            'desk': {
+                                'price': 100
+                            }
+                        },
+                        {
+                            'desk': {
+                                'price': 100
+                            },
+                            'desk2': {
+                                'price': 200
+                            }
+                        }
+                    ],
+            }, 'products.desk'));
+
+        expect({'products':
+                [
+                    {
+                    },
+                    {
+                        'desk': {
+                            'price': 100
+                        },
+                        'desk2': {
+                            'price': 200
+                        }
+                    }
+                ],
+            })
+            .toEqual(Obj.except({'products':
+                    [
+                        {
+                            'desk': {
+                                'price': 100
+                            }
+                        },
+                        {
+                            'desk': {
+                                'price': 100
+                            },
+                            'desk2': {
+                                'price': 200
+                            }
+                        }
+                    ],
+            }, 'products.0.desk'));
 
         expect({'value': [1,2,4]})
             .toEqual(Obj.except({'value': [1,2,3,4]}, 'value.2'));
         
-        expect({'simple_object': [
-                {
-                    'desk': {
-                        'price': 100
-                    }
-                },
-                {
-                    'desk': {
-                    },
-                    'desk2': {
-                        'price': 100
-                    },
-                },
-            ]})
-        .toEqual(Obj.except({'simple_object': [
-                {
-                    'desk': {
-                        'price': 100
-                    }
-                },
-                {
-                    'desk': {
-                        'price': 100
-                    },
-                    'desk2': {
-                        'price': 100
-                    }
-                },
-            ]}, 'simple_object.1.desk.price'));
+        expect({'value': [2,4]})
+            .toEqual(Obj.except({'value': [1,2,3,4]}, ['value.2', 'value.0']));
         
     });
 

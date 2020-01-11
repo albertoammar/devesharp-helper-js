@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Str = require("./Str");
 const Arr_1 = require("./Arr");
+const Str_1 = require("./Str");
 function add(obj, key, value) {
     let objDot = dot(obj);
     if (!objDot[key]) {
@@ -10,8 +11,9 @@ function add(obj, key, value) {
     return obj;
 }
 exports.add = add;
-function except(obj, key) {
-    return removeValue(obj, key);
+function except(obj, keys) {
+    keys = Arr_1.warp(keys);
+    return removeValue2(obj, '', keys);
 }
 exports.except = except;
 function get(obj, key, defaultValue = null) {
@@ -34,7 +36,8 @@ function only(obj, keys) {
                 .replace(/\.[0-9]+\./, '.')
                 .replace(/\.[0-9]+$/, '')
                 .replace(/^[0-9]+\./, '');
-            if (keyD === onlyKey) {
+            let deep = new RegExp(onlyKey + '\\.(.*)').test(keyD);
+            if (keyD === onlyKey || deep) {
                 newObjDot[key] = value;
             }
         });
@@ -55,6 +58,32 @@ function dot(obj) {
     return passingLastKey(obj, null);
 }
 exports.dot = dot;
+function removeValue2(obj, currentKey, keyRemove) {
+    let isArray = false;
+    if (obj instanceof Array) {
+        isArray = true;
+    }
+    Object.entries(obj).forEach(entry => {
+        let [key, value] = entry;
+        let fullKey = currentKey + key;
+        let keyRemoveArray = fullKey.toString()
+            .replace(/\.[0-9]+\./, '.')
+            .replace(/\.[0-9]+$/, '')
+            .replace(/^[0-9]+\./, '');
+        if (Str_1.equalsAny(fullKey, keyRemove) || Str_1.equalsAny(keyRemoveArray, keyRemove)) {
+            delete obj[key];
+        }
+        else {
+            if (typeof value === 'object') {
+                obj[key] = removeValue2(value, fullKey + '.', keyRemove);
+            }
+        }
+    });
+    if (isArray) {
+        return Object.values(obj);
+    }
+    return obj;
+}
 function removeValue(obj, key) {
     if (Str.contains(key, '.')) {
         let split = key.split('.');
@@ -65,6 +94,7 @@ function removeValue(obj, key) {
     }
     else {
         if (obj instanceof Array) {
+            console.log(obj);
             obj.splice(key, 1);
         }
         else {
