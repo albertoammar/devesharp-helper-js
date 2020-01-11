@@ -12,6 +12,14 @@ function compareArray(array1, array2) {
     return JSON.stringify(array1) == JSON.stringify(array2);
 }
 exports.compareArray = compareArray;
+function collapse(array) {
+    let newArray = [];
+    array.forEach(value => {
+        newArray = [...newArray, ...value];
+    });
+    return newArray;
+}
+exports.collapse = collapse;
 function warp(value) {
     if (!(value instanceof Array)) {
         if (value === null || value === undefined) {

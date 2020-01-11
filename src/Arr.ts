@@ -13,6 +13,15 @@ export function compareArray(array1: any[], array2: any[]) {
     return JSON.stringify(array1) == JSON.stringify(array2);
 }
 
+export function collapse(array: any[]) {
+    let newArray = [];
+    array.forEach(value => {
+        newArray = [...newArray,...value];
+    });
+    
+    return newArray;
+}
+
 export function warp(value: any[] | any) {
     if(!(value instanceof Array)) {
         if(value === null || value === undefined) {
@@ -23,16 +32,3 @@ export function warp(value: any[] | any) {
     
     return value;
 }
-
-// export function containsAll(array: any[], needles: any[] | any) {
-//     array.forEach((i) => {
-//         Object.entries(needles).forEach(entry => {
-//             let [key, value] = entry;
-//             if (i == value) {
-//                 console.log(value);
-//             }
-//         })
-//     });
-//    
-//     return true;
-// }

@@ -25,4 +25,8 @@ describe('Arr', () => {
         expect(Arr.warp(undefined)).toEqual([]);
         expect(Arr.warp(null)).toEqual([]);
     });
+    
+    it('collapse', async () => {
+        expect([1, 2, 3, 4, 5, 6, 7, 8, 9]).toEqual(Arr.collapse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+    });
 });
