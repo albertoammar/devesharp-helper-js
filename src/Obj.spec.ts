@@ -355,4 +355,14 @@ describe('Obj', () => {
         expect([['key', 'key2'], ['value', {'b': 1}]])
             .toEqual(Obj.divide({'key': 'value', 'key2': {'b': 1}}));
     });
+    
+    it('pluck', async () => {
+        expect([1,2,3])
+            .toEqual(Obj.pluck([{'id': 1},{'id': 2},{'id': 3}], 'id'));
+        expect(['Taylor', 'Abigail'])
+            .toEqual(Obj.pluck([
+                    {'developer': {'id': 1, 'name': 'Taylor'}},
+                    {'developer': {'id': 2, 'name': 'Abigail'}}
+                ], 'developer.name'));
+    });
 });

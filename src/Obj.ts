@@ -15,6 +15,12 @@ export function except(obj: Object, keys: string| string[]) {
     return removeValue(obj, '', keys);
 }
 
+export function pluck(array: Object [], key: string) {
+    return array.map(obj => {
+        return get(obj, key);
+    });
+}
+
 export function divide(obj: Object) {
     return [Object.keys(obj), Object.values(obj)];
 }
