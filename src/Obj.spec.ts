@@ -346,4 +346,13 @@ describe('Obj', () => {
         expect({ value: 2 }).toEqual(Obj.only(obj, 'value'));
         expect({"array_object":[{"desk":{"price":["A"]}},{"desk":{"price":["A"]}}]}).toEqual(Obj.only(obj, 'array_object.desk.price'));
     });
+    
+    it('divide', async () => {
+        expect([['key', 'key2'], ['value', 'value2']])
+            .toEqual(Obj.divide({'key': 'value', 'key2': 'value2'}));
+        expect([['key'], ['value']])
+            .toEqual(Obj.divide({'key': 'value'}));
+        expect([['key', 'key2'], ['value', {'b': 1}]])
+            .toEqual(Obj.divide({'key': 'value', 'key2': {'b': 1}}));
+    });
 });

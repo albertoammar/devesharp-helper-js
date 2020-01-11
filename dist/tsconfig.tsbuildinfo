@@ -110,8 +110,8 @@
         "signature": "bdacec36879f15198e4da22331d6c90c0e7904b24ccbdd952e78455547cceeb7"
       },
       "../src/obj.ts": {
-        "version": "f3c071fc71da21c9df158b4e711ca9d0fdbf943813c681b52dd5aa01cbb815f8",
-        "signature": "7a6f4fc4e062378f9e6d8d6306adf40aa6685b83e96c9a501bc2f9f838ac35ce"
+        "version": "189f61d3ca66c8590952a2eb367db8e06f559dd007d95003698cef7045f8f50e",
+        "signature": "b07757f93cb44b191b6ddee43880ee075bdd63339794243fcf3c5bde0076566b"
       },
       "../src/index.ts": {
         "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
@@ -210,8 +210,7 @@
       ],
       "../src/obj.ts": [
         "../src/str.ts",
-        "../src/arr.ts",
-        "../node_modules/case/case.d.ts"
+        "../src/arr.ts"
       ],
       "../src/index.ts": [
         "../src/obj.ts",

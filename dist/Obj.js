@@ -13,9 +13,13 @@ function add(obj, key, value) {
 exports.add = add;
 function except(obj, keys) {
     keys = Arr_1.warp(keys);
-    return removeValue2(obj, '', keys);
+    return removeValue(obj, '', keys);
 }
 exports.except = except;
+function divide(obj) {
+    return [Object.keys(obj), Object.values(obj)];
+}
+exports.divide = divide;
 function get(obj, key, defaultValue = null) {
     let objDot = dot(obj);
     return objDot[key] ? objDot[key] : defaultValue;
@@ -58,7 +62,7 @@ function dot(obj) {
     return passingLastKey(obj, null);
 }
 exports.dot = dot;
-function removeValue2(obj, currentKey, keyRemove) {
+function removeValue(obj, currentKey, keyRemove) {
     let isArray = false;
     if (obj instanceof Array) {
         isArray = true;
@@ -75,31 +79,12 @@ function removeValue2(obj, currentKey, keyRemove) {
         }
         else {
             if (typeof value === 'object') {
-                obj[key] = removeValue2(value, fullKey + '.', keyRemove);
+                obj[key] = removeValue(value, fullKey + '.', keyRemove);
             }
         }
     });
     if (isArray) {
         return Object.values(obj);
-    }
-    return obj;
-}
-function removeValue(obj, key) {
-    if (Str.contains(key, '.')) {
-        let split = key.split('.');
-        let keyFirst = split[0];
-        let newKey = split.splice(1, split.length).join('.');
-        let newObj = obj[keyFirst] ? obj[keyFirst] : {};
-        obj[keyFirst] = removeValue(newObj, newKey);
-    }
-    else {
-        if (obj instanceof Array) {
-            console.log(obj);
-            obj.splice(key, 1);
-        }
-        else {
-            delete obj[key];
-        }
     }
     return obj;
 }
