@@ -114,8 +114,8 @@
         "signature": "644091bc77c75e7d79b153b821482547f5fd8daf7ec479e062107d109674c29d"
       },
       "../src/index.ts": {
-        "version": "ecfc614743bde96c8beec06111ae4d317c9623093fb4664ad81ee3ef6536d3f6",
-        "signature": "6f55276c451e5e7c2feb2b8b339c428d44c7c3eb43caa6ebeb766243ba674e6a"
+        "version": "d3f5b47022d1959aafb2e56f7b2e0d9430e05bdfa013ee8cd85e12af5b6812d7",
+        "signature": "5c8872aab6022976acb745adb5011ae23c6e6a3ddd40051412948afb04bb6d5f"
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
         "version": "9cebab89871446e2e9f2c8599cb22696c08207cf5bc21adb8f9752d582c5055e",
@@ -214,6 +214,7 @@
       ],
       "../src/index.ts": [
         "../src/obj.ts",
+        "../src/arr.ts",
         "../src/str.ts"
       ],
       "../node_modules/@types/babel__generator/index.d.ts": [
@@ -256,6 +257,7 @@
     "exportedModulesMap": {
       "../src/index.ts": [
         "../src/obj.ts",
+        "../src/arr.ts",
         "../src/str.ts"
       ],
       "../node_modules/@types/babel__core/index.d.ts": [
