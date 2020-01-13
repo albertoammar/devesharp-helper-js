@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function range(start, end) {
-    let range = [];
-    for (let i = start; end + 1 > i; i++) {
-        range.push(i);
+    const rangeArray = [];
+    for (let i = start; end + 1 > i; i += 1) {
+        rangeArray.push(i);
     }
-    return range;
+    return rangeArray;
 }
 exports.range = range;
 function compareArray(array1, array2) {
-    return JSON.stringify(array1) == JSON.stringify(array2);
+    return JSON.stringify(array1) === JSON.stringify(array2);
 }
 exports.compareArray = compareArray;
 function collapse(array) {
@@ -23,7 +23,7 @@ exports.collapse = collapse;
 function wrap(value) {
     if (!(value instanceof Array)) {
         if (value === null || value === undefined) {
-            return (value === null || value === undefined) ? [] : [value];
+            return value === null || value === undefined ? [] : [value];
         }
         return [value];
     }
