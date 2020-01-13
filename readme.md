@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/14295479/72207172-1a94d180-3475-11ea-9c18-f73307aa360a.png"/>
+  <img src="https://user-images.githubusercontent.com/14295479/72280544-523b7f00-3617-11ea-97e9-be28faf852bc.png"/>
 </p>
 <p align="center">
 <a href="https://www.npmjs.com/package/@devesharp/helpers-js" target="_blank"><img src="https://img.shields.io/npm/v/@devesharp/helpers-js.svg" alt="NPM Version" /></a>
