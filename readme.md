@@ -11,14 +11,14 @@ HelpersJS is a javascript library based on Laravel helpers. It is just based, co
 ## Installation
 
 ```shell
-$ npm i @albertoammar/helpers-js 
-$ yarn add @albertoammar/helpers-js
+$ npm i @devesharp/helpers-js 
+$ yarn add @devesharp/helpers-js
 ```
 
 ## Usage
 
 ```ts
-import { Str, Arr } from '@albertoammar/helpers-js';
+import { Str, Arr } from '@devesharp/helpers-js';
 
 Str.contains('This is my name', 'my name'); 
 
@@ -37,7 +37,7 @@ Arr.warp(1);
 The `Arr.range()` method creates an array containing a range of elements.:
 
 ```ts
-import { Arr } from '@albertoammar/helpers-js';
+import { Arr } from '@devesharp/helpers-js';
 
 Arr.range(1, 5); 
 
@@ -54,7 +54,7 @@ Arr.range(1, 1);
 The `Arr.compareArray()` method compare two arrays:
 
 ```ts
-import { Arr } from '@albertoammar/helpers-js';
+import { Arr } from '@devesharp/helpers-js';
 
 Arr.range([0,1], [0,1]); 
 
@@ -71,7 +71,7 @@ Arr.range([], [1]);
 The `Arr.wrap()` method wraps the given value in an array. If the given value is already an array it will not be changed:
 
 ```ts
-import { Arr } from '@albertoammar/helpers-js';
+import { Arr } from '@devesharp/helpers-js';
 
 Arr.wrap('any'); 
 
@@ -92,7 +92,7 @@ Arr.wrap([true]);
 The `Arr.collapse()` method collapses an array of arrays into a single array:
 
 ```ts
-import { Arr } from '@albertoammar/helpers-js';
+import { Arr } from '@devesharp/helpers-js';
 
 Arr.wrap([[1, 2, 3], [4, 5, 6], [7, 8, 9]]); 
 
@@ -107,7 +107,7 @@ Arr.wrap([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 The `Obj.add()` method adds a given key / value pair to an array if the given key doesn't already exist in the array or is set to null:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.add({name: 'Desk'}, 'price', 100); 
 
@@ -120,7 +120,7 @@ Obj.add({name: 'Desk'}, 'price', 100);
 The `Obj.except()` method removes the given key / value pairs from an array:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.except({name: 'Desk', price: 200}, ['price']); 
 
@@ -142,7 +142,7 @@ Obj.except({'products':[{'desk': {'price': 100}},{'desk': {'price': 100}'desk2':
 The `Obj.pluck()` method retrieves all of the values for a given key from an array:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.pluck([{'id': 1},{'id': 2},{'id': 3}], 'id'); 
 
@@ -159,7 +159,7 @@ Obj.pluck([
 The `Obj.divide()` method returns two arrays, one containing the keys, and the other containing the values of the given array:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.divide({'key': 'value'}); 
 
@@ -176,7 +176,7 @@ Obj.divide({'key': 'value', 'key2': 'value2'});
 The `Obj.get()` method retrieves a value from a deeply nested array using "dot" notation:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.get({products: {desk: {price: 100}}}, 'products.desk.price'); 
 
@@ -191,7 +191,7 @@ Obj.get({products: {desk: {price: 100}}}, 'products.desk.price');
 The `Obj.get()` method also accepts a default value, which will be returned if the specific key is not found:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.get({}, 'products.desk.price', 200); 
 
@@ -204,7 +204,7 @@ Obj.get({}, 'products.desk.price', 200);
 The `Obj.has()` method checks whether a given item or items exists in an array using "dot" notation:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.get({products: {desk: {price: 100}}}, 'products.desk.price'); 
 
@@ -221,7 +221,7 @@ Obj.get({products: {desk: {price: 100}}}, 'products.desk.price2');
 The `Obj.only()` method returns only the specified key / value pairs from the given array:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.only({name: 'Desk', price: 200}, ['price']); 
 
@@ -234,7 +234,7 @@ Obj.only({name: 'Desk', price: 200}, ['price']);
 The `Obj.set()` method sets a value within a deeply nested array using "dot" notation:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.set({'products':{'desk': {'price': 100}}}, 'products.desk.price', 200); 
 
@@ -247,7 +247,7 @@ Obj.set({'products':{'desk': {'price': 100}}}, 'products.desk.price', 200);
 The `Obj.dot()` method flattens a multi-dimensional array into a single level array that uses "dot" notation to indicate depth:
 
 ```ts
-import { Obj } from '@albertoammar/helpers-js';
+import { Obj } from '@devesharp/helpers-js';
 
 Obj.dot({'products':{'desk': {'price': 100, 'price2': 200}}}); 
 
