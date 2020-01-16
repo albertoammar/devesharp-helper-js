@@ -254,3 +254,44 @@ Obj.dot({'products':{'desk': {'price': 100, 'price2': 200}}});
 // ['products.desk.price': 100, 'products.desk.price2': 200]
 
 ```
+
+## Str
+
+#### `Str.after()`
+
+The `Str.after()`  method returns everything after the given value in a string:
+
+```ts
+import { Str } from '@devesharp/helpers-js';
+
+Str.after('This is my name', 'This is my '); 
+
+// 'name'
+
+```
+
+#### `Str.before()`
+
+The `Str.before()`  method returns everything before the given value in a string:
+
+```ts
+import { Str } from '@devesharp/helpers-js';
+
+Str.before('This is my name', 'my name'); 
+
+// 'This is '
+
+```
+
+#### `Str.camel()`
+
+The `Str.camel()`  method converts the given string to camelCase:
+
+```ts
+import { Str } from '@devesharp/helpers-js';
+
+Str.before('This is my name', 'my name'); 
+
+// 'This is '
+
+```

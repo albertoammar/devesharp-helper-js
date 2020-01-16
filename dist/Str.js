@@ -2,23 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Case = require("case");
 function after(string, value) {
-    let split = string.split(value);
+    const split = string.split(value);
     split.splice(0, 1);
     return split.join(value);
 }
 exports.after = after;
 function before(string, value) {
-    let split = string.split(value);
+    const split = string.split(value);
     return split[0];
 }
 exports.before = before;
 function startsWith(string, beginWith) {
-    let reg = new RegExp('^' + beginWith + '.*');
+    const reg = new RegExp(`^${beginWith}.*`);
     return reg.test(string);
 }
 exports.startsWith = startsWith;
 function endsWith(string, endWith) {
-    let reg = new RegExp('.*' + endWith + '$');
+    const reg = new RegExp(`.*${endWith}$`);
     return reg.test(string);
 }
 exports.endsWith = endsWith;
@@ -39,17 +39,17 @@ function snake(string) {
 }
 exports.snake = snake;
 function contains(string, needles) {
-    let reg = new RegExp('.*\\' + needles + '.*');
+    const reg = new RegExp(`.*\\${needles}.*`);
     return reg.test(string);
 }
 exports.contains = contains;
 function containsAll(string, needles) {
-    let truthy = needles.map(value => contains(string, value));
+    const truthy = needles.map(value => contains(string, value));
     return truthy.reduce((previous, current) => previous && current);
 }
 exports.containsAll = containsAll;
 function equalsAny(string, needles) {
-    let truthy = needles.map(value => string === value);
+    const truthy = needles.map(value => string === value);
     return truthy.reduce((previous, current) => previous || current);
 }
 exports.equalsAny = equalsAny;
@@ -77,9 +77,9 @@ function replaceFirst(search, replace, subject) {
 }
 exports.replaceFirst = replaceFirst;
 function replaceLast(search, replace, subject) {
-    return subject.substring(0, subject.lastIndexOf(search)) +
+    return (subject.substring(0, subject.lastIndexOf(search)) +
         replace +
-        subject.substring(subject.lastIndexOf(search) + search.length);
+        subject.substring(subject.lastIndexOf(search) + search.length));
 }
 exports.replaceLast = replaceLast;
 //# sourceMappingURL=Str.js.map

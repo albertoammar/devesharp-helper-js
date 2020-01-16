@@ -1,23 +1,23 @@
 import * as Case from 'case';
 
 export function after(string: string, value: string) {
-    let split = string.split(value);
+    const split = string.split(value);
     split.splice(0, 1);
     return split.join(value);
 }
 
 export function before(string: string, value: string) {
-    let split = string.split(value);
+    const split = string.split(value);
     return split[0];
 }
 
 export function startsWith(string: string, beginWith: string) {
-    let reg = new RegExp('^'+beginWith+'.*');
+    const reg = new RegExp(`^${beginWith}.*`);
     return reg.test(string);
 }
 
 export function endsWith(string: string, endWith: string) {
-    let reg = new RegExp('.*'+endWith+'$');
+    const reg = new RegExp(`.*${endWith}$`);
     return reg.test(string);
 }
 
@@ -38,17 +38,17 @@ export function snake(string: string) {
 }
 
 export function contains(string: string, needles: string): boolean {
-    let reg = new RegExp('.*\\'+needles+'.*');
+    const reg = new RegExp(`.*\\${needles}.*`);
     return reg.test(string);
 }
 
 export function containsAll(string: string, needles: string[]) {
-    let truthy = needles.map(value => contains(string, value));
+    const truthy = needles.map(value => contains(string, value));
     return truthy.reduce((previous, current): boolean => previous && current);
 }
 
 export function equalsAny(string: string, needles: string[]) {
-    let truthy = needles.map(value => string === value);
+    const truthy = needles.map(value => string === value);
     return truthy.reduce((previous, current): boolean => previous || current);
 }
 
@@ -60,7 +60,7 @@ export function start(string: string, char: string) {
     return string[0] !== char ? char + string : string;
 }
 
-export function limit(string: string, limit: number, end: string = '...') {
+export function limit(string: string, limit: number, end = '...') {
     return string.substr(0, limit) + end;
 }
 
@@ -68,7 +68,7 @@ export function replaceArray(search: string, replace: any[], subject: string) {
     replace.forEach(i => {
         subject = subject.replace(search, i);
     });
-    
+
     return subject;
 }
 
@@ -77,7 +77,9 @@ export function replaceFirst(search: string, replace: string, subject: string) {
 }
 
 export function replaceLast(search: string, replace: string, subject: string) {
-    return subject.substring(0, subject.lastIndexOf(search)) +
+    return (
+        subject.substring(0, subject.lastIndexOf(search)) +
         replace +
-        subject.substring(subject.lastIndexOf(search) + search.length);
+        subject.substring(subject.lastIndexOf(search) + search.length)
+    );
 }

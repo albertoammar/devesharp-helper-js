@@ -110,7 +110,7 @@
         "signature": "a81d73fb2837f88ab4671882a5d3fe3113da6a5883c2261fdfb0b87905bba67f"
       },
       "../src/str.ts": {
-        "version": "f6fe99b0177b74e07a00d12ff4e74798fe58c6f44f72b102c451a8a9c96c8257",
+        "version": "e3381e566c05f21b8b027af39bb793fefe6a5b40be29450a052b6653df6aa71c",
         "signature": "bdacec36879f15198e4da22331d6c90c0e7904b24ccbdd952e78455547cceeb7"
       },
       "../src/obj.ts": {
