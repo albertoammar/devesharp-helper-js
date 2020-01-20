@@ -3,6 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Str = require("./Str");
 const Arr_1 = require("./Arr");
 const Str_1 = require("./Str");
+function filter(obj) {
+    const objDot = dot(obj);
+    const newObj = {};
+    Object.entries(objDot).map(([key, value]) => {
+        if (value !== undefined && value !== null) {
+            set(newObj, key, value);
+        }
+    });
+    return convertArrayAssocToArraySeqRecursive(newObj);
+}
+exports.filter = filter;
 function add(obj, key, value) {
     const objDot = dot(obj);
     if (!objDot[key]) {

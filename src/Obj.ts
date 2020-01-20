@@ -2,6 +2,18 @@ import * as Str from './Str';
 import { compareArray, range, wrap } from './Arr';
 import { equalsAny } from './Str';
 
+export function filter(obj: any) {
+    const objDot = dot(obj);
+    const newObj = {};
+    Object.entries(objDot).map(([key, value]) => {
+        if (value !== undefined && value !== null) {
+            set(newObj, key, value);
+        }
+    });
+
+    return convertArrayAssocToArraySeqRecursive(newObj);
+}
+
 export function add(obj: Record<string, any>, key: string, value: any) {
     const objDot = dot(obj);
     if (!objDot[key]) {

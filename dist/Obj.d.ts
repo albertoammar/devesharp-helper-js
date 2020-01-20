@@ -1,3 +1,4 @@
+export declare function filter(obj: any): any;
 export declare function add(obj: Record<string, any>, key: string, value: any): Record<string, any>;
 export declare function except(obj: Record<string, any>, originalKeys: string | string[]): Record<string, any>;
 export declare function pluck(array: Record<string, any>[], key: string): any[];
