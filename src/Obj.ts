@@ -23,8 +23,9 @@ export function add(obj: Record<string, any>, key: string, value: any) {
 }
 
 export function except(obj: Record<string, any>, originalKeys: string | string[]) {
+    const copyObject = JSON.parse(JSON.stringify(obj));
     const keys = wrap(originalKeys);
-    return removeValue(obj, '', keys);
+    return removeValue(copyObject, '', keys);
 }
 
 export function pluck(array: Record<string, any>[], key: string) {

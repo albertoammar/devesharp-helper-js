@@ -114,7 +114,7 @@
         "signature": "bdacec36879f15198e4da22331d6c90c0e7904b24ccbdd952e78455547cceeb7"
       },
       "../src/obj.ts": {
-        "version": "962869a9ffc5542e4ff5d5a2d9b9de8c8353977bfce335b13d2659e328e36719",
+        "version": "51ea7ea50b4e569c5215fba948c248da74483d5c49c31f39e6f32fe3d14fab22",
         "signature": "2ff109eec83e4d954656204ee598e4c5c355142849055a98678ae79ef709dcad"
       },
       "../src/index.ts": {

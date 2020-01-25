@@ -23,8 +23,9 @@ function add(obj, key, value) {
 }
 exports.add = add;
 function except(obj, originalKeys) {
+    const copyObject = JSON.parse(JSON.stringify(obj));
     const keys = Arr_1.wrap(originalKeys);
-    return removeValue(obj, '', keys);
+    return removeValue(copyObject, '', keys);
 }
 exports.except = except;
 function pluck(array, key) {
