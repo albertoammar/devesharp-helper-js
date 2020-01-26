@@ -1,5 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+function chunk(array, chunkN) {
+    chunkN = chunkN === 0 ? 1 : chunkN;
+    const chunks = [];
+    for (let i = 0, j = array.length; i < j; i += chunkN) {
+        chunks.push(array.slice(i, i + chunkN));
+    }
+    return chunks;
+}
+exports.chunk = chunk;
 function range(start, end) {
     const rangeArray = [];
     for (let i = start; end + 1 > i; i += 1) {

@@ -1,3 +1,13 @@
+export function chunk<T = any>(array: T[], chunkN: number): T[][] {
+    chunkN = chunkN === 0 ? 1 : chunkN;
+    const chunks = [];
+    for (let i = 0, j = array.length; i < j; i += chunkN) {
+        chunks.push(array.slice(i, i + chunkN));
+    }
+
+    return chunks;
+}
+
 export function range(start: number, end: number): number[] {
     const rangeArray = [];
 

@@ -1,6 +1,18 @@
 import * as Arr from './Arr';
 
 describe('Arr', () => {
+    it('chunk', async () => {
+        expect([[0, 1], [2, 3], [4, 5], [6, 7], [8, 9], [10]]).toEqual(
+            Arr.chunk([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2),
+        );
+        expect([
+            [0, 1, 2, 3, 4, 5, 6, 7],
+            [8, 9, 10],
+        ]).toEqual(Arr.chunk([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 8));
+        expect([[0, 1]]).toEqual(Arr.chunk([0, 1], 8));
+        expect([[0], [1]]).toEqual(Arr.chunk([0, 1], 0));
+    });
+
     it('range', async () => {
         expect([0, 1, 2, 3]).toEqual(Arr.range(0, 3));
         expect([1, 2, 3, 4]).toEqual(Arr.range(1, 4));
